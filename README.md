@@ -1,1 +1,1 @@
-Juego adivina el nuemro con javascript, html, css
+Juego adivina el nùmero con javascript, html, css
