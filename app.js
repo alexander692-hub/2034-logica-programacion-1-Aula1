@@ -24,15 +24,25 @@ function intentoDeUsuario() {
                         if (numeroDeUsuario === numeroSecreto) {
                             asignarTextoElemento('p',`Acertaste el número en ${intentos} 
                                 ${(intentos === 1) ? 'vez' : 'veces'}`);
+                               document.getElementById('reiniciar').removeAttribute('disabled'); //activa el boton al terminar el primer juego y asi poder volver a jugar
                         }else {
+                            // el usuario nbo acerto
                             if (numeroDeUsuario > numeroSecreto) {
                                 asignarTextoElemento('p','El número secreto es menor');
                         }else {
                             asignarTextoElemento('p','El número secreto es mayor');
                         }
                         intentos++;
-                        return;
+                        limpiarCaja(); //llamamos la variable para limpiar los datos del jugador
                         }
+                        return;
+                    }
+
+                    function limpiarCaja() {
+                       //let valorCaja = document.querySelector('#valorUsuario') //este valor es el de nuestro imput
+                      // valorCaja.value = ''; //esto nos indica limpiar la pantalla al jugar '' comillas simploes significa valor vacio 
+                       //el simbolo # indica que queremos el id  
+                       document.querySelector('#valorUsuario').value = '';
                     }
 
                 function generarNumeroSecreto() {
